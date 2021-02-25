@@ -6,7 +6,9 @@
   "author": "anuar_daher@hotmail.com",
   "scripts": {
     "lint": "vue-cli-service lint",
-    "test": "echo \"No test specified\" && exit 0"
+    "test": "echo \"No test specified\" && exit 0",
+    "build": "quasar build",
+    "dev": "quasar dev"
   },
   "dependencies": {
     "@quasar/extras": "^1.9.13",

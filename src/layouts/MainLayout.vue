@@ -37,6 +37,7 @@
     <q-drawer
       v-model="leftDrawerOpen"
       show-if-above
+      :persistent="$q.screen.gt.md"
       dark
       content-class="bg-drawer"
     >
@@ -125,15 +126,11 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink'
-import Messages from './Messages'
 
 export default {
   name: 'MainLayout',
 
   components: {
-    Messages,
-    EssentialLink
   },
 
   data () {
