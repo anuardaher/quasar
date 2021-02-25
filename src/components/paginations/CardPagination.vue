@@ -58,73 +58,73 @@
 </template>
 
 <script>
-    export default {
-        name: 'CardPagination',
-        data() {
-            return {
-                cards_data: [
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'free',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 1'
-                    },
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'paid',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 2'
-                    },
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'free',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 3'
-                    },
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'free',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 4'
-                    },
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'paid',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 5'
-                    },
-                    {
-                        img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
-                        type: 'free',
-                        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                        title: 'Title 6'
-                    },
-                ],
-                type: 'All',
-                page: 1,
-                currentPage: 1,
-                nextPage: null,
-                totalPages: 4,
-            }
+export default {
+  name: 'CardPagination',
+  data () {
+    return {
+      cards_data: [
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'free',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 1'
         },
-        methods: {
-            getData() {
-                if (this.type == 'All') {
-                    return this.cards_data
-                } else {
-                    let self = this
-                    return this.cards_data.filter(function (item) {
-                        return item.type.toLowerCase() == self.type.toLowerCase()
-                    })
-                }
-            },
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'paid',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 2'
         },
-        computed: {
-            getData2() {
-                return this.getData().slice((this.page - 1) * this.totalPages, (this.page - 1) * this.totalPages + this.totalPages)
-            }
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'free',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 3'
+        },
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'free',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 4'
+        },
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'paid',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 5'
+        },
+        {
+          img: 'https://placeimg.com/500/300/nature?t=' + Math.random(),
+          type: 'free',
+          text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          title: 'Title 6'
         }
+      ],
+      type: 'All',
+      page: 1,
+      currentPage: 1,
+      nextPage: null,
+      totalPages: 4
     }
+  },
+  methods: {
+    getData () {
+      if (this.type == 'All') {
+        return this.cards_data
+      } else {
+        const self = this
+        return this.cards_data.filter(function (item) {
+          return item.type.toLowerCase() == self.type.toLowerCase()
+        })
+      }
+    }
+  },
+  computed: {
+    getData2 () {
+      return this.getData().slice((this.page - 1) * this.totalPages, (this.page - 1) * this.totalPages + this.totalPages)
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -28,8 +28,8 @@
 
 <script>
 export default {
-  name: "CardPricing",
-  props:['background_image','title','icon','price','text']
+  name: 'CardPricing',
+  props: ['background_image', 'title', 'icon', 'price', 'text']
 }
 </script>
 

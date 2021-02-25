@@ -16,8 +16,8 @@
 
 <script>
 export default {
-  name: "CardProfileDark",
-  props:['name','des','text']
+  name: 'CardProfileDark',
+  props: ['name', 'des', 'text']
 }
 </script>
 

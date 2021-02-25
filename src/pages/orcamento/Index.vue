@@ -43,13 +43,13 @@
 </template>
 
 <script>
-import PageHeader from "src/components/PageHeader.vue";
+import PageHeader from 'src/components/PageHeader.vue'
 
 export default {
   components: {
     PageHeader
   }
-};
+}
 </script>
 
 <style></style>

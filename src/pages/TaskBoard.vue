@@ -387,161 +387,160 @@
 </template>
 
 <script>
-    import Vue from "vue";
-    import draggable from "vuedraggable";
+import Vue from 'vue'
+import draggable from 'vuedraggable'
 
-
-    Vue.component("draggable", draggable);
-    export default {
-        name: "TaskBoard",
-        data() {
-            return {
-                task_selected_index:{
-                    blocked: null,
-                    completed: null,
-                    planned: null,
-                    wip: null
-                },
-                thumbStyle: {
-                    right: '4px',
-                    borderRadius: '5px',
-                    backgroundColor: '#027be3',
-                    width: '5px',
-                    opacity: 0.75
-                },
-                add_model: {
-                    blocked: false,
-                    completed: false,
-                    planned: false,
-                    wip: false
-                },
-                add_data: {
-                    blocked: {},
-                    completed: {},
-                    planned: {},
-                    wip: {}
-                },
-                size: {},
-                barStyle: {
-                    right: '2px',
-                    borderRadius: '9px',
-                    backgroundColor: '#027be3',
-                    width: '9px',
-                    opacity: 0.2
-                },
-                planned_task: [
-                    {
-                        title: 'Buy milk',
-                        label: '15 mins',
-                        tags: [{name: 'Error', color: 'negative'}, {name: 'Warning', color: 'warning'}],
-                        description: '2 Gallons of milk at the Deli store'
-                    },
-                    {
-                        title: 'Dispose Garbage',
-                        label: '10 mins',
-                        tags: [{name: 'Info', color: 'info'}, {name: 'Success', color: 'positive'}],
-                        description: 'Sort out recyclable and waste as needed'
-                    },
-                    {
-                        title: 'Write Blog',
-                        label: '10 mins',
-                        tags: [{name: 'Warning', color: 'warning'}],
-                        description: 'Can AI make memes?'
-                    },
-                    {
-                        title: 'Pay Rent',
-                        label: '5 mins',
-                        tags: [{name: 'Error', color: 'negative'}, {name: 'Warning', color: 'warning'}, {
-                            name: 'Info',
-                            color: 'info'
-                        }],
-                        description: 'Transfer to bank account'
-                    }
-                ],
-                wip_task: [
-                    {
-                        title: 'Clean House',
-                        label: '30 mins',
-                        tags: [{name: 'Error', color: 'negative'}, {name: 'Success', color: 'positive'}],
-                        description: 'Soap wash and polish floor. Polish windows and doors. Scrap all broken glasses'
-                    },
-                    {
-                        title: 'Go Trekking',
-                        label: '30 mins',
-                        tags: [{name: 'Info', color: 'info'}, {name: 'Success', color: 'positive'}, {
-                            name: 'Info',
-                            color: 'info'
-                        }, {name: 'Success', color: 'positive'}, {name: 'Info', color: 'info'}, {
-                            name: 'Success',
-                            color: 'positive'
-                        }],
-                        description: 'Completed 10km on cycle'
-                    },
-                ],
-                blocked_task: [
-                    {
-                        title: 'Morning Jog',
-                        label: '30 mins',
-                        tags: [{name: 'Error', color: 'negative'}],
-                        description: 'Track using fitbit'
-                    },
-                ],
-                completed_task: [
-                    {
-                        title: 'Practice Meditation',
-                        label: '15 mins',
-                        tags: [],
-                        description: 'Use Headspace app'
-                    },
-                    {
-                        title: 'Maintain Daily Journal',
-                        label: '15 mins',
-                        tags: [],
-                        description: 'Use Spreadsheet for now'
-                    },
-                    {
-                        title: 'Go Trekking',
-                        label: '15 mins',
-                        tags: [{name: 'Info', color: 'info'}, {name: 'Success', color: 'positive'}],
-                        description: 'Completed 10km on cycle'
-                    },
-                ],
-
-            };
+Vue.component('draggable', draggable)
+export default {
+  name: 'TaskBoard',
+  data () {
+    return {
+      task_selected_index: {
+        blocked: null,
+        completed: null,
+        planned: null,
+        wip: null
+      },
+      thumbStyle: {
+        right: '4px',
+        borderRadius: '5px',
+        backgroundColor: '#027be3',
+        width: '5px',
+        opacity: 0.75
+      },
+      add_model: {
+        blocked: false,
+        completed: false,
+        planned: false,
+        wip: false
+      },
+      add_data: {
+        blocked: {},
+        completed: {},
+        planned: {},
+        wip: {}
+      },
+      size: {},
+      barStyle: {
+        right: '2px',
+        borderRadius: '9px',
+        backgroundColor: '#027be3',
+        width: '9px',
+        opacity: 0.2
+      },
+      planned_task: [
+        {
+          title: 'Buy milk',
+          label: '15 mins',
+          tags: [{ name: 'Error', color: 'negative' }, { name: 'Warning', color: 'warning' }],
+          description: '2 Gallons of milk at the Deli store'
         },
-        computed: {
-            dragOptions() {
-                return {
-                    animation: 200,
-                    group: "description",
-                    disabled: false,
-                    ghostClass: "ghost"
-                };
-            },
-            getHeight() {
-                return this.size.height - 90 + 'px'
-            }
+        {
+          title: 'Dispose Garbage',
+          label: '10 mins',
+          tags: [{ name: 'Info', color: 'info' }, { name: 'Success', color: 'positive' }],
+          description: 'Sort out recyclable and waste as needed'
         },
-        methods: {
-            onResize(size) {
-                this.size = size
-            },
-            deleteTask(name,index){
-              if(name=='panned'){
-                  this.planned_task.splice(index, 1)
-              }
-              if(name=='wip'){
-                  this.wip_task.splice(index, 1)
-              }
-              if(name=='completed'){
-                  this.completed_task.splice(index, 1)
-              }
-              if(name=='blocked'){
-                  this.blocked_task.splice(index, 1)
-              }
-            }
+        {
+          title: 'Write Blog',
+          label: '10 mins',
+          tags: [{ name: 'Warning', color: 'warning' }],
+          description: 'Can AI make memes?'
+        },
+        {
+          title: 'Pay Rent',
+          label: '5 mins',
+          tags: [{ name: 'Error', color: 'negative' }, { name: 'Warning', color: 'warning' }, {
+            name: 'Info',
+            color: 'info'
+          }],
+          description: 'Transfer to bank account'
         }
-    };
+      ],
+      wip_task: [
+        {
+          title: 'Clean House',
+          label: '30 mins',
+          tags: [{ name: 'Error', color: 'negative' }, { name: 'Success', color: 'positive' }],
+          description: 'Soap wash and polish floor. Polish windows and doors. Scrap all broken glasses'
+        },
+        {
+          title: 'Go Trekking',
+          label: '30 mins',
+          tags: [{ name: 'Info', color: 'info' }, { name: 'Success', color: 'positive' }, {
+            name: 'Info',
+            color: 'info'
+          }, { name: 'Success', color: 'positive' }, { name: 'Info', color: 'info' }, {
+            name: 'Success',
+            color: 'positive'
+          }],
+          description: 'Completed 10km on cycle'
+        }
+      ],
+      blocked_task: [
+        {
+          title: 'Morning Jog',
+          label: '30 mins',
+          tags: [{ name: 'Error', color: 'negative' }],
+          description: 'Track using fitbit'
+        }
+      ],
+      completed_task: [
+        {
+          title: 'Practice Meditation',
+          label: '15 mins',
+          tags: [],
+          description: 'Use Headspace app'
+        },
+        {
+          title: 'Maintain Daily Journal',
+          label: '15 mins',
+          tags: [],
+          description: 'Use Spreadsheet for now'
+        },
+        {
+          title: 'Go Trekking',
+          label: '15 mins',
+          tags: [{ name: 'Info', color: 'info' }, { name: 'Success', color: 'positive' }],
+          description: 'Completed 10km on cycle'
+        }
+      ]
+
+    }
+  },
+  computed: {
+    dragOptions () {
+      return {
+        animation: 200,
+        group: 'description',
+        disabled: false,
+        ghostClass: 'ghost'
+      }
+    },
+    getHeight () {
+      return this.size.height - 90 + 'px'
+    }
+  },
+  methods: {
+    onResize (size) {
+      this.size = size
+    },
+    deleteTask (name, index) {
+      if (name == 'panned') {
+        this.planned_task.splice(index, 1)
+      }
+      if (name == 'wip') {
+        this.wip_task.splice(index, 1)
+      }
+      if (name == 'completed') {
+        this.completed_task.splice(index, 1)
+      }
+      if (name == 'blocked') {
+        this.blocked_task.splice(index, 1)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "CardCafe"
+  name: 'CardCafe'
 }
 </script>
 

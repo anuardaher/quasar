@@ -33,8 +33,8 @@
 
 <script>
 export default {
-  name: "CardCompany",
-  props:['background_image']
+  name: 'CardCompany',
+  props: ['background_image']
 }
 </script>
 

@@ -142,98 +142,98 @@
 </template>
 
 <script>
-    import {fasGlobeAmericas, fasFlask} from '@quasar/extras/fontawesome-v5'
+import { fasGlobeAmericas, fasFlask } from '@quasar/extras/fontawesome-v5'
 
-    export default {
-        name: 'Mail',
-        data() {
-            return {
-                leftDrawerOpen: false,
-                miniState: false,
-                search: '',
-                showAdvanced: false,
-                showDateOptions: false,
-                exactPhrase: '',
-                hasWords: '',
-                excludeWords: '',
-                byWebsite: '',
-                byDate: 'Any time',
-                links1: [
-                    {icon: 'move_to_inbox', text: 'Inbox'},
-                    {icon: 'star', text: 'Stared'},
-                    {icon: 'send', text: 'Sent'},
-                    {icon: 'error', text: 'Spam'}
-                ],
-                links2: [
-                    {icon: 'flag', text: 'Updates', color: 'text-orange'},
-                    {icon: 'group', text: 'Social', color: 'text-red'},
-                    {icon: 'label', text: 'Promos', color: 'text-indigo-8'},
-                    {icon: 'forum', text: 'Forums', color: 'text-teal'}
-                ],
-                mail_data: [
-                    {
-                        name: 'Pratik Patel',
-                        avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
-                        date: 'March 12, 2019',
-                    },
-                    {
-                        name: 'Pratik Patel',
-                        avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
-                        date: 'March 22, 2019',
-                    },
-                    {
-                        name: 'Pratik Patel',
-                        avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
-                        date: 'March 12, 2019',
-                    },
-                    {
-                        name: 'Winfield Stapforth',
-                        avatar: 'https://cdn.quasar.dev/img/avatar6.jpg',
-                        date: 'March 22, 2019',
-                    },
-                    {
-                        name: 'Jeff Galbraith',
-                        avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg',
-                        date: 'March 12, 2019',
-                    },
-                    {
-                        name: 'Jeff Galbraith',
-                        avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg',
-                        date: 'March 22, 2019',
-                    },
-                    {
-                        name: 'Razvan Stoenescu',
-                        avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg',
-                        date: 'March 12, 2019',
-                    },
-                    {
-                        name: 'Razvan Stoenescu',
-                        avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg',
-                        date: 'March 22, 2019',
-                    },
-                    {
-                        name: 'John Doe',
-                        avatar: 'https://cdn.quasar.dev/img/boy-avatar.png',
-                        date: 'March 12, 2019',
-                    },
-                    {
-                        name: 'Pratik Patel',
-                        avatar: 'https://cdn.quasar.dev/img/boy-avatar.png',
-                        date: 'March 22, 2019',
-                    },
-                ]
-            }
+export default {
+  name: 'Mail',
+  data () {
+    return {
+      leftDrawerOpen: false,
+      miniState: false,
+      search: '',
+      showAdvanced: false,
+      showDateOptions: false,
+      exactPhrase: '',
+      hasWords: '',
+      excludeWords: '',
+      byWebsite: '',
+      byDate: 'Any time',
+      links1: [
+        { icon: 'move_to_inbox', text: 'Inbox' },
+        { icon: 'star', text: 'Stared' },
+        { icon: 'send', text: 'Sent' },
+        { icon: 'error', text: 'Spam' }
+      ],
+      links2: [
+        { icon: 'flag', text: 'Updates', color: 'text-orange' },
+        { icon: 'group', text: 'Social', color: 'text-red' },
+        { icon: 'label', text: 'Promos', color: 'text-indigo-8' },
+        { icon: 'forum', text: 'Forums', color: 'text-teal' }
+      ],
+      mail_data: [
+        {
+          name: 'Pratik Patel',
+          avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
+          date: 'March 12, 2019'
         },
-        mounted() {
-            this.mail_data = this.mail_data.map(function (item) {
-                item['msg'] = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti\n' +
-                    '              commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste\n' +
-                    '              eveniet doloribus ullam aliquid.';
-                return item;
-            })
+        {
+          name: 'Pratik Patel',
+          avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
+          date: 'March 22, 2019'
+        },
+        {
+          name: 'Pratik Patel',
+          avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
+          date: 'March 12, 2019'
+        },
+        {
+          name: 'Winfield Stapforth',
+          avatar: 'https://cdn.quasar.dev/img/avatar6.jpg',
+          date: 'March 22, 2019'
+        },
+        {
+          name: 'Jeff Galbraith',
+          avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg',
+          date: 'March 12, 2019'
+        },
+        {
+          name: 'Jeff Galbraith',
+          avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg',
+          date: 'March 22, 2019'
+        },
+        {
+          name: 'Razvan Stoenescu',
+          avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg',
+          date: 'March 12, 2019'
+        },
+        {
+          name: 'Razvan Stoenescu',
+          avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg',
+          date: 'March 22, 2019'
+        },
+        {
+          name: 'John Doe',
+          avatar: 'https://cdn.quasar.dev/img/boy-avatar.png',
+          date: 'March 12, 2019'
+        },
+        {
+          name: 'Pratik Patel',
+          avatar: 'https://cdn.quasar.dev/img/boy-avatar.png',
+          date: 'March 22, 2019'
         }
-
+      ]
     }
+  },
+  mounted () {
+    this.mail_data = this.mail_data.map(function (item) {
+      item.msg = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, eius reprehenderit eos corrupti\n' +
+                    '              commodi magni quaerat ex numquam, dolorum officiis modi facere maiores architecto suscipit iste\n' +
+                    '              eveniet doloribus ullam aliquid.'
+      return item
+    })
+  }
+
+}
 </script>
 
 <style>

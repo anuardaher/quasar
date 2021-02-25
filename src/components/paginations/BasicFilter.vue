@@ -40,8 +40,8 @@
 
 <script>
 export default {
-  name: "BasicFilter",
-  data() {
+  name: 'BasicFilter',
+  data () {
     return {
       type: 'All',
       cards_data: [
@@ -80,22 +80,22 @@ export default {
           type: 'free',
           text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           title: 'Title 6'
-        },
+        }
       ],
-      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }
   },
   computed: {
-    getData() {
+    getData () {
       if (this.type == 'All') {
         return this.cards_data
       } else {
-        let self = this;
+        const self = this
         return this.cards_data.filter(function (item) {
           return item.type.toLowerCase() == self.type.toLowerCase()
         })
       }
-    },
+    }
   }
 }
 </script>

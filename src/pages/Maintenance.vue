@@ -26,11 +26,10 @@
 </template>
 
 <script>
-    export default {
-        name: "Maintenance"
-    }
+export default {
+  name: 'Maintenance'
+}
 </script>
-
 
 <style>
   .bg-image {

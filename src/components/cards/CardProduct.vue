@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "CardProduct",
+  name: 'CardProduct',
   props: ['data']
 }
 </script>

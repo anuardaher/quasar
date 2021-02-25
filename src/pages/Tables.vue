@@ -16,14 +16,14 @@
 
 <script>
 export default {
-  name: "Tables",
+  name: 'Tables',
   components: {
     TableProgress: () => import('components/tables/TableProgress'),
     TableCustomGrid: () => import('components/tables/TableCustomGrid'),
     TableDarkMode: () => import('components/tables/TableDarkMode'),
     TableActions: () => import('components/tables/TableActions'),
     TablesBasic: () => import('components/tables/TableBasic')
-  },
+  }
 }
 </script>
 

@@ -25,10 +25,10 @@ export default {
     },
     subtitle: {
       type: String,
-      defualt: () => ""
+      defualt: () => ''
     }
   }
-};
+}
 </script>
 
 <style></style>

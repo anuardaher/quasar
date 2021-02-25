@@ -18,7 +18,6 @@
                 </q-item-label>
                 <q-item-label header class="text-center">{{ contacts_list.length }} CONTACTS</q-item-label>
 
-
                 <span v-for="(contact, index) in contacts_list" :key="index" @click="selected_contact=contact">
                   <contact-item
                     :avatar="contact.avatar" :name="contact.name" :position="contact.position"></contact-item>
@@ -201,12 +200,12 @@
 <script>
 
 export default {
-  name: "Contact",
+  name: 'Contact',
   components: {
     ContactDetailItem: () => import('components/ContactDetailItem'),
     ContactItem: () => import('components/ContactItem')
   },
-  data() {
+  data () {
     return {
       tab: 'all',
       size: {},
@@ -266,7 +265,7 @@ export default {
           phone: '175.718.4633 x878',
           secondary_phone: '175.718.4633 x878',
           address: 'Calgary, Canada'
-        },
+        }
 
       ],
       favorites_list: [
@@ -302,7 +301,7 @@ export default {
           phone: '175.718.4633 x878',
           secondary_phone: '175.718.4633 x878',
           address: 'Calgary, Canada'
-        },
+        }
       ],
       selected_contact: {},
       detail_list: [
@@ -341,18 +340,18 @@ export default {
           label: 'Website',
           field: 'website',
           text_color: 'grey-8'
-        },
+        }
       ]
     }
   },
   methods: {
-    onResize(size) {
+    onResize (size) {
       this.size = size
-    },
+    }
   },
-  created() {
+  created () {
     if (!this.$q.screen.lt.sm) {
-      this.selected_contact = this.contacts_list[0];
+      this.selected_contact = this.contacts_list[0]
     }
   }
 }

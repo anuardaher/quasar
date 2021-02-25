@@ -38,8 +38,8 @@
 
 <script>
 export default {
-  name: "ListPagination",
-  data() {
+  name: 'ListPagination',
+  data () {
     return {
       list_Data: [
         {
@@ -98,16 +98,16 @@ export default {
             '            weekend. Do you want to grab brunch?',
           avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
           time: '10:42 PM'
-        },
+        }
       ],
       page: 1,
       currentPage: 1,
       nextPage: null,
-      totalPages: 5,
+      totalPages: 5
     }
   },
   computed: {
-    getListData() {
+    getListData () {
       return this.list_Data.slice((this.page - 1) * this.totalPages, (this.page - 1) * this.totalPages + this.totalPages)
     }
   }

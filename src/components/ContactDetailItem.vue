@@ -14,8 +14,8 @@
 
 <script>
 export default {
-  name: "ContactDetailItem",
-  props:['icon','text_color','value','label']
+  name: 'ContactDetailItem',
+  props: ['icon', 'text_color', 'value', 'label']
 }
 </script>
 

@@ -327,187 +327,187 @@
 </template>
 
 <script>
-import IEcharts from "vue-echarts-v3/src/full.js";
+import IEcharts from 'vue-echarts-v3/src/full.js'
 
 export default {
-  name: "Dashboard2",
+  name: 'Dashboard2',
   components: {
     IEcharts,
-    CardSocial: () => import("components/cards/CardSocial")
+    CardSocial: () => import('components/cards/CardSocial')
   },
-  data() {
+  data () {
     return {
       slide: 1,
-      tab: "contact",
+      tab: 'contact',
       messages: [
         {
           id: 5,
-          name: "Pratik Patel",
-          msg: " -- I'll be in your neighborhood doing errands this\n" + "            weekend. Do you want to grab brunch?",
-          avatar: "https://avatars2.githubusercontent.com/u/34883558?s=400&v=4",
-          time: "10:42 PM"
+          name: 'Pratik Patel',
+          msg: " -- I'll be in your neighborhood doing errands this\n" + '            weekend. Do you want to grab brunch?',
+          avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4',
+          time: '10:42 PM'
         },
         {
           id: 6,
-          name: "Winfield Stapforth",
-          msg: " -- I'll be in your neighborhood doing errands this\n" + "            weekend. Do you want to grab brunch?",
-          avatar: "https://cdn.quasar.dev/img/avatar6.jpg",
-          time: "11:17 AM"
+          name: 'Winfield Stapforth',
+          msg: " -- I'll be in your neighborhood doing errands this\n" + '            weekend. Do you want to grab brunch?',
+          avatar: 'https://cdn.quasar.dev/img/avatar6.jpg',
+          time: '11:17 AM'
         },
         {
           id: 1,
-          name: "Boy",
-          msg: " -- I'll be in your neighborhood doing errands this\n" + "            weekend. Do you want to grab brunch?",
-          avatar: "https://cdn.quasar.dev/img/boy-avatar.png",
-          time: "5:17 AM"
+          name: 'Boy',
+          msg: " -- I'll be in your neighborhood doing errands this\n" + '            weekend. Do you want to grab brunch?',
+          avatar: 'https://cdn.quasar.dev/img/boy-avatar.png',
+          time: '5:17 AM'
         },
         {
           id: 2,
-          name: "Jeff Galbraith",
-          msg: " -- I'll be in your neighborhood doing errands this\n" + "            weekend. Do you want to grab brunch?",
-          avatar: "https://cdn.quasar.dev/team/jeff_galbraith.jpg",
-          time: "5:17 AM"
+          name: 'Jeff Galbraith',
+          msg: " -- I'll be in your neighborhood doing errands this\n" + '            weekend. Do you want to grab brunch?',
+          avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg',
+          time: '5:17 AM'
         },
         {
           id: 3,
-          name: "Razvan Stoenescu",
-          msg: " -- I'll be in your neighborhood doing errands this\n" + "            weekend. Do you want to grab brunch?",
-          avatar: "https://cdn.quasar.dev/team/razvan_stoenescu.jpeg",
-          time: "5:17 AM"
+          name: 'Razvan Stoenescu',
+          msg: " -- I'll be in your neighborhood doing errands this\n" + '            weekend. Do you want to grab brunch?',
+          avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg',
+          time: '5:17 AM'
         }
       ],
       contacts: [
         {
-          name: "Pratik Patel",
-          position: "Developer",
-          avatar: "https://avatars2.githubusercontent.com/u/34883558?s=400&v=4"
+          name: 'Pratik Patel',
+          position: 'Developer',
+          avatar: 'https://avatars2.githubusercontent.com/u/34883558?s=400&v=4'
         },
         {
-          name: "Razvan Stoenescu",
-          position: "Developer",
-          avatar: "https://cdn.quasar.dev/team/razvan_stoenescu.jpeg"
+          name: 'Razvan Stoenescu',
+          position: 'Developer',
+          avatar: 'https://cdn.quasar.dev/team/razvan_stoenescu.jpeg'
         },
         {
-          name: "Jeff Galbraith",
-          position: "Developer",
-          avatar: "https://cdn.quasar.dev/team/jeff_galbraith.jpg"
+          name: 'Jeff Galbraith',
+          position: 'Developer',
+          avatar: 'https://cdn.quasar.dev/team/jeff_galbraith.jpg'
         },
         {
-          name: "Brunhilde Panswick",
-          position: "Administrator",
-          avatar: "https://cdn.quasar.dev/img/avatar2.jpg"
+          name: 'Brunhilde Panswick',
+          position: 'Administrator',
+          avatar: 'https://cdn.quasar.dev/img/avatar2.jpg'
         },
         {
-          name: "Winfield Stapforth",
-          position: "Administrator",
-          avatar: "https://cdn.quasar.dev/img/avatar6.jpg"
+          name: 'Winfield Stapforth',
+          position: 'Administrator',
+          avatar: 'https://cdn.quasar.dev/img/avatar6.jpg'
         }
       ],
       sales_data: [
         {
-          name: "Pratik Patel",
+          name: 'Pratik Patel',
           Progress: 70,
-          status: "Canceled",
-          stock: "14 / 30",
-          date: "23 Oct 2018",
-          avatar: "https://avatars3.githubusercontent.com/u/34883558?s=400&u=09455019882ac53dc69b23df570629fd84d37dd1&v=4",
-          product_name: "Woman Bag",
-          total: "$300,00",
-          code: "QWE123",
-          prod_img: require("src/assets/bag.jpg")
+          status: 'Canceled',
+          stock: '14 / 30',
+          date: '23 Oct 2018',
+          avatar: 'https://avatars3.githubusercontent.com/u/34883558?s=400&u=09455019882ac53dc69b23df570629fd84d37dd1&v=4',
+          product_name: 'Woman Bag',
+          total: '$300,00',
+          code: 'QWE123',
+          prod_img: require('src/assets/bag.jpg')
         },
         {
-          name: "Mayank Patel",
+          name: 'Mayank Patel',
           Progress: 60,
-          status: "Sent",
-          date: "11 Nov 2018",
-          stock: "25 / 70",
-          avatar: "https://avatars2.githubusercontent.com/u/27857088?s=400&u=a898efbc753d93cf4c2070a7cf3b05544b50deea&v=4",
-          product_name: "Laptop",
-          total: "$230,00",
-          code: "ABC890",
-          prod_img: require("src/assets/laptop.jpg")
+          status: 'Sent',
+          date: '11 Nov 2018',
+          stock: '25 / 70',
+          avatar: 'https://avatars2.githubusercontent.com/u/27857088?s=400&u=a898efbc753d93cf4c2070a7cf3b05544b50deea&v=4',
+          product_name: 'Laptop',
+          total: '$230,00',
+          code: 'ABC890',
+          prod_img: require('src/assets/laptop.jpg')
         },
         {
-          name: "Mayur Patel",
+          name: 'Mayur Patel',
           Progress: 30,
-          status: "Pending",
-          stock: "35 / 50",
-          avatar: "https://avatars0.githubusercontent.com/u/55240045?s=400&u=cf9bffc2bd2d8e42ca6e5abf40ddd6c1a03ce2860&v=4",
-          product_name: "Pinapple Jam",
-          total: "$34,00",
-          date: "19 Sept 2020",
-          code: "GHI556",
-          prod_img: require("src/assets/jam.jpg")
+          status: 'Pending',
+          stock: '35 / 50',
+          avatar: 'https://avatars0.githubusercontent.com/u/55240045?s=400&u=cf9bffc2bd2d8e42ca6e5abf40ddd6c1a03ce2860&v=4',
+          product_name: 'Pinapple Jam',
+          total: '$34,00',
+          date: '19 Sept 2020',
+          code: 'GHI556',
+          prod_img: require('src/assets/jam.jpg')
         },
         {
-          name: "Jeff Galbraith",
+          name: 'Jeff Galbraith',
           Progress: 100,
-          status: "Paid",
-          stock: "18 / 33",
-          avatar: "https://avatars1.githubusercontent.com/u/10262924?s=400&u=9f601b344d597ed76581e3a6a10f3c149cb5f6dc&v=4",
-          product_name: "Action Figure",
-          total: "$208,00",
-          date: "19 Sept 2020",
-          code: "JKL345",
-          prod_img: require("src/assets/action.jpg")
+          status: 'Paid',
+          stock: '18 / 33',
+          avatar: 'https://avatars1.githubusercontent.com/u/10262924?s=400&u=9f601b344d597ed76581e3a6a10f3c149cb5f6dc&v=4',
+          product_name: 'Action Figure',
+          total: '$208,00',
+          date: '19 Sept 2020',
+          code: 'JKL345',
+          prod_img: require('src/assets/action.jpg')
         }
       ],
       sales_column: [
         {
-          name: "Products",
-          label: "Products",
-          field: "Products",
+          name: 'Products',
+          label: 'Products',
+          field: 'Products',
           sortable: true,
-          align: "left"
+          align: 'left'
         },
-        { name: "Name", label: "Buyer", field: "name", sortable: true, align: "left" },
+        { name: 'Name', label: 'Buyer', field: 'name', sortable: true, align: 'left' },
         {
-          name: "Total",
-          label: "Total",
-          field: "total",
+          name: 'Total',
+          label: 'Total',
+          field: 'total',
           sortable: true,
-          align: "right",
-          classes: "text-bold"
+          align: 'right',
+          classes: 'text-bold'
         },
         {
-          name: "Status",
-          label: "Status",
-          field: "status",
+          name: 'Status',
+          label: 'Status',
+          field: 'status',
           sortable: true,
-          align: "left",
-          classes: "text-bold"
+          align: 'left',
+          classes: 'text-bold'
         },
-        { name: "Stock", label: "Stock", field: "task", sortable: true, align: "left" }
+        { name: 'Stock', label: 'Stock', field: 'task', sortable: true, align: 'left' }
       ]
-    };
+    }
   },
   computed: {
-    getSalesOptions() {
+    getSalesOptions () {
       return {
         tooltip: {
-          trigger: "axis",
+          trigger: 'axis',
           axisPointer: {
             // Coordinate axis indicator, coordinate axis trigger is valid
-            type: "shadow" // The default is a straight line, optional:'line' |'shadow'
+            type: 'shadow' // The default is a straight line, optional:'line' |'shadow'
           }
         },
         grid: {
-          left: "2%",
-          right: "2%",
-          top: "4%",
-          bottom: "3%",
+          left: '2%',
+          right: '2%',
+          top: '4%',
+          bottom: '3%',
           containLabel: true
         },
         xAxis: [
           {
-            type: "category",
-            data: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+            type: 'category',
+            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
           }
         ],
         yAxis: [
           {
-            type: "value",
+            type: 'value',
             splitLine: {
               show: false
             }
@@ -515,58 +515,58 @@ export default {
         ],
         series: [
           {
-            name: "Fashions",
-            type: "bar",
+            name: 'Fashions',
+            type: 'bar',
             data: [40, 45, 27, 50, 32, 50, 70, 30, 30, 40, 67, 29],
-            color: "#546bfa"
+            color: '#546bfa'
           },
           {
-            name: "Electronics",
-            type: "bar",
+            name: 'Electronics',
+            type: 'bar',
             data: [124, 100, 20, 120, 117, 70, 110, 90, 50, 90, 20, 50],
-            color: "#3a9688"
+            color: '#3a9688'
           },
           {
-            name: "Toys",
-            type: "bar",
+            name: 'Toys',
+            type: 'bar',
             data: [17, 2, 0, 29, 20, 10, 23, 0, 8, 20, 11, 30],
-            color: "#02a9f4"
+            color: '#02a9f4'
           },
           {
-            name: "Vouchers",
-            type: "bar",
+            name: 'Vouchers',
+            type: 'bar',
             data: [20, 100, 80, 14, 90, 86, 100, 70, 120, 50, 30, 60],
-            color: "#f88c2b"
+            color: '#f88c2b'
           }
         ]
-      };
+      }
     },
-    getPieOptions() {
+    getPieOptions () {
       return {
         tooltip: {
-          trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)"
+          trigger: 'item',
+          formatter: '{a} <br/>{b}: {c} ({d}%)'
         },
         legend: {
           bottom: 10,
-          left: "center",
-          data: ["Fashions", "Electronics", "Toys", "Vouchers"]
+          left: 'center',
+          data: ['Fashions', 'Electronics', 'Toys', 'Vouchers']
         },
         series: [
           {
-            name: "Sales",
-            type: "pie",
-            radius: ["50%", "70%"],
+            name: 'Sales',
+            type: 'pie',
+            radius: ['50%', '70%'],
             avoidLabelOverlap: false,
             label: {
               show: false,
-              position: "center"
+              position: 'center'
             },
             emphasis: {
               label: {
                 show: false,
-                fontSize: "30",
-                fontWeight: "bold"
+                fontSize: '30',
+                fontWeight: 'bold'
               }
             },
             labelLine: {
@@ -575,62 +575,62 @@ export default {
             data: [
               {
                 value: 335,
-                name: "Fashions",
+                name: 'Fashions',
                 itemStyle: {
-                  color: "#546bfa"
+                  color: '#546bfa'
                 }
               },
               {
                 value: 310,
-                name: "Electronics",
+                name: 'Electronics',
                 itemStyle: {
-                  color: "#3a9688"
+                  color: '#3a9688'
                 }
               },
               {
                 value: 234,
-                name: "Toys",
+                name: 'Toys',
                 itemStyle: {
-                  color: "#02a9f4"
+                  color: '#02a9f4'
                 }
               },
               {
                 value: 135,
-                name: "Vouchers",
+                name: 'Vouchers',
                 itemStyle: {
-                  color: "#f88c2b"
+                  color: '#f88c2b'
                 }
               }
             ]
           }
         ]
-      };
+      }
     }
   },
   methods: {
-    getColor(val) {
+    getColor (val) {
       if (val > 70 && val <= 100) {
-        return "green";
+        return 'green'
       } else if (val > 50 && val <= 70) {
-        return "blue";
+        return 'blue'
       }
-      return "red";
+      return 'red'
     },
-    getChipColor(status) {
-      if (status == "Canceled") {
-        return "negative";
-      } else if (status == "Sent") {
-        return "positive";
-      } else if (status == "Pending") {
-        return "warning";
-      } else if (status == "Paid") {
-        return "info";
+    getChipColor (status) {
+      if (status == 'Canceled') {
+        return 'negative'
+      } else if (status == 'Sent') {
+        return 'positive'
+      } else if (status == 'Pending') {
+        return 'warning'
+      } else if (status == 'Paid') {
+        return 'info'
       } else {
-        return "dark";
+        return 'dark'
       }
     }
   }
-};
+}
 </script>
 
 <style scoped></style>

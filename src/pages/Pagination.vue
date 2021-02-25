@@ -15,12 +15,12 @@
 <script>
 
 export default {
-  name: "Pagination",
+  name: 'Pagination',
   components: {
     BasicFilter: () => import('components/paginations/BasicFilter'),
     ListPagination: () => import('components/paginations/ListPagination'),
     CardPagination: () => import('components/paginations/CardPagination')
-  },
+  }
 }
 </script>
 

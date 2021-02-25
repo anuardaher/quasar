@@ -206,7 +206,6 @@
                   <div class="text-subtitle1 q-mb-xs">Expiry date - 04/2012</div>
                 </q-card-section>
 
-
               </q-card-section>
             </q-card>
 
@@ -293,16 +292,16 @@
 </template>
 
 <script>
-    export default {
-        name: "Checkout",
-        data() {
-            return {
-                step: 1,
-                address_detail: {},
-                card_detail: {}
-            }
-        }
+export default {
+  name: 'Checkout',
+  data () {
+    return {
+      step: 1,
+      address_detail: {},
+      card_detail: {}
     }
+  }
+}
 </script>
 
 <style scoped>

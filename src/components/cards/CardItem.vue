@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "CardItem",
+  name: 'CardItem',
   props: ['avatar', 'name', 'des']
 }
 </script>

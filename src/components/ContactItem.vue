@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: "ContactItem",
+  name: 'ContactItem',
   props: ['avatar', 'name', 'position']
 }
 </script>

@@ -6,37 +6,36 @@
 </template>
 
 <script>
-    export default {
-        name: "StreetView",
-        data() {
-            return {
-                mapData: ''
-            }
-        },
-        mounted() {
-            this.initMap();
-        },
-        methods: {
-            initMap() {
-                this.mapData = new google.maps.Map(document.getElementById('myMap'), {
-                    center: {lat: 42.345573, lng: -71.098326},
-                    zoom: 7
-                })
-
-                let pano = new google.maps.StreetViewPanorama(
-                    document.getElementById('pano'), {
-                        position: {lat: 42.345573, lng: -71.098326},
-                        pov: {
-                            heading: 34,
-                            pitch: 10
-                        }
-                    });
-            }
-        }
+export default {
+  name: 'StreetView',
+  data () {
+    return {
+      mapData: ''
     }
+  },
+  mounted () {
+    this.initMap()
+  },
+  methods: {
+    initMap () {
+      this.mapData = new google.maps.Map(document.getElementById('myMap'), {
+        center: { lat: 42.345573, lng: -71.098326 },
+        zoom: 7
+      })
+
+      const pano = new google.maps.StreetViewPanorama(
+        document.getElementById('pano'), {
+          position: { lat: 42.345573, lng: -71.098326 },
+          pov: {
+            heading: 34,
+            pitch: 10
+          }
+        })
+    }
+  }
+}
 </script>
 
 <style scoped>
 
 </style>
-

@@ -55,36 +55,36 @@
 </template>
 
 <script>
-    export default {
-        name: "Cards",
-        components: {
-          CardItem: () => import('components/cards/CardItem'),
-          CardCafe: () => import('components/cards/CardCafe'),
-          CardCompany: () => import('components/cards/CardCompany'),
-          CardProfileDark: () => import('components/cards/CardProfileDark'),
-          CardProfile: () => import('components/cards/CardProfile'),
-          BasicCard: () => import('../layouts/BasicCard')
-        },
-        data() {
-            return {
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                profile_card_data:{
-                  name:'Pratik Patel',
-                  des:'Solutions Developer',
-                  avatar:'https://cdn.quasar.dev/img/boy-avatar.png'
-                },
-                profile_data:{
-                  name:'Pratik Patel',
-                  des:'--- Solution Developer, Pune'
-                },
-              background_img1:'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
-              background_img2:'linear-gradient(87deg, rgb(45, 206, 137), rgb(45, 206, 204)) !important'
-            }
-        },
-        created() {
-          this.profile_data.text=this.text
-        }
+export default {
+  name: 'Cards',
+  components: {
+    CardItem: () => import('components/cards/CardItem'),
+    CardCafe: () => import('components/cards/CardCafe'),
+    CardCompany: () => import('components/cards/CardCompany'),
+    CardProfileDark: () => import('components/cards/CardProfileDark'),
+    CardProfile: () => import('components/cards/CardProfile'),
+    BasicCard: () => import('../layouts/BasicCard')
+  },
+  data () {
+    return {
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      profile_card_data: {
+        name: 'Pratik Patel',
+        des: 'Solutions Developer',
+        avatar: 'https://cdn.quasar.dev/img/boy-avatar.png'
+      },
+      profile_data: {
+        name: 'Pratik Patel',
+        des: '--- Solution Developer, Pune'
+      },
+      background_img1: 'linear-gradient(to top, #30cfd0 0%, #330867 100%)',
+      background_img2: 'linear-gradient(87deg, rgb(45, 206, 137), rgb(45, 206, 204)) !important'
     }
+  },
+  created () {
+    this.profile_data.text = this.text
+  }
+}
 </script>
 
 <style scoped>

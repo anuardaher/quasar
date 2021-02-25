@@ -24,7 +24,7 @@
 export default {
   name: 'ToDoList',
   components: {
-    Todo: () =>  import('components/Todo'),
+    Todo: () => import('components/Todo')
   },
   data () {
     return {

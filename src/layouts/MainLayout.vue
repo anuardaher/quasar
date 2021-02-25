@@ -125,23 +125,23 @@
 </template>
 
 <script>
-import EssentialLink from "components/EssentialLink";
-import Messages from "./Messages";
+import EssentialLink from 'components/EssentialLink'
+import Messages from './Messages'
 
 export default {
-  name: "MainLayout",
+  name: 'MainLayout',
 
   components: {
     Messages,
     EssentialLink
   },
 
-  data() {
+  data () {
     return {
       leftDrawerOpen: false
-    };
+    }
   }
-};
+}
 </script>
 
 <style>

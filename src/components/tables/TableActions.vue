@@ -36,8 +36,8 @@
 
 <script>
 export default {
-  name: "TableActions",
-  data() {
+  name: 'TableActions',
+  data () {
     return {
       data: [
         {
@@ -79,14 +79,14 @@ export default {
           avatar: 'https://avatars3.githubusercontent.com/u/34883558?s=400&u=09455019882ac53dc69b23df570629fd84d37dd1&v=4',
           progress: 30,
           des: 'Solutions Developer'
-        },
+        }
       ],
       columns: [
-        {name: 'Name', label: 'Name', field: 'name', sortable: true, align: 'left'},
-        {name: 'Crated Date', label: 'Crated Date', field: 'Crated_Date', sortable: true, align: 'left'},
-        {name: 'Project', label: 'Project', field: 'Project', sortable: true, align: 'left'},
-        {name: 'Action', label: '', field: 'Action', sortable: false, align: 'center'}
-      ],
+        { name: 'Name', label: 'Name', field: 'name', sortable: true, align: 'left' },
+        { name: 'Crated Date', label: 'Crated Date', field: 'Crated_Date', sortable: true, align: 'left' },
+        { name: 'Project', label: 'Project', field: 'Project', sortable: true, align: 'left' },
+        { name: 'Action', label: '', field: 'Action', sortable: false, align: 'center' }
+      ]
     }
   }
 }

@@ -36,13 +36,13 @@
 
 <script>
 
-    export default {
-        name: "TreeTable",
-        components: {
-          SimpleHierarchy: () => import('components/tree-table/SimpleHierarchy'),
-          CustomHierarchy: () => import('components/tree-table/CustomHierarchy')
-        }
-    }
+export default {
+  name: 'TreeTable',
+  components: {
+    SimpleHierarchy: () => import('components/tree-table/SimpleHierarchy'),
+    CustomHierarchy: () => import('components/tree-table/CustomHierarchy')
+  }
+}
 </script>
 
 <style scoped>

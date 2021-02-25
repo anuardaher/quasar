@@ -39,29 +39,29 @@ export default {
     return {
       timeline_list: [
         {
-            title: 'Pratik Likes your product ',
-            side: 'left',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
+          title: 'Pratik Likes your product ',
+          side: 'left',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
                 '                  et dolore magna aliqua.',
-            color: "red",
-            icon: "thumb_up"
+          color: 'red',
+          icon: 'thumb_up'
         },
         {
-            title: 'Product Update',
-            side: 'left',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
+          title: 'Product Update',
+          side: 'left',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
                 '                  et dolore magna aliqua.',
-            color: "orange",
-            icon: "done_all"
+          color: 'orange',
+          icon: 'done_all'
         }, {
-            title: 'Jeff Likes your product ',
-            side: 'left',
-            desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
+          title: 'Jeff Likes your product ',
+          side: 'left',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore\n' +
                 '                  et dolore magna aliqua.',
-            color: "blue",
-            icon: "thumb_up"
+          color: 'blue',
+          icon: 'thumb_up'
         }
-      ],
+      ]
     }
   }
 }

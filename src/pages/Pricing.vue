@@ -56,11 +56,11 @@
 <script>
 
 export default {
-  name: "Pricing",
+  name: 'Pricing',
   components: {
-    CardPricing : () => import('components/cards/CardPricing')
+    CardPricing: () => import('components/cards/CardPricing')
   },
-  data() {
+  data () {
     return {
       year: (new Date()).getFullYear(),
       pricing_data: [
@@ -91,7 +91,7 @@ export default {
           icon: 'business_center',
           background_image: 'linear-gradient(87deg, rgb(17, 205, 239), rgb(17, 113, 239)) !important',
           text: 'This is good if your company size is between 2 and 10 Persons.'
-        },
+        }
       ]
     }
   }

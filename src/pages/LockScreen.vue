@@ -32,15 +32,15 @@
 </template>
 
 <script>
-    export default {
-        name: "LockScreen",
-        data() {
-            return {
-                password: '',
-                isPwd: 'password'
-            }
-        }
+export default {
+  name: 'LockScreen',
+  data () {
+    return {
+      password: '',
+      isPwd: 'password'
     }
+  }
+}
 </script>
 
 <style>

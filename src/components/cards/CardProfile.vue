@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "CardProfile",
+  name: 'CardProfile',
   props: ['avatar', 'name', 'des']
 }
 </script>

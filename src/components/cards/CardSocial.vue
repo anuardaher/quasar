@@ -23,77 +23,77 @@
 
 <script>
 export default {
-  name: "CardSocial",
+  name: 'CardSocial',
   props: {
     icon_position: {
       required: false,
-      default: "left"
+      default: 'left'
     }
   },
   computed: {
-    items: function() {
-      return this.icon_position === "left"
+    items: function () {
+      return this.icon_position === 'left'
         ? [
-            {
-              title: "My Account",
-              icon: "person",
-              value: "200",
-              color1: "#5064b5",
-              color2: "#3e51b5"
-            },
-            {
-              title: "Followers",
-              icon: "fab fa-twitter",
-              value: "500",
-              color1: "#f37169",
-              color2: "#f34636"
-            },
-            {
-              title: "Connections",
-              icon: "fab fa-google",
-              value: "50",
-              color1: "#ea6a7f",
-              color2: "#ea4b64"
-            },
-            {
-              title: "Website Visits",
-              icon: "bar_chart",
-              value: "1020",
-              color1: "#a270b1",
-              color2: "#9f52b1"
-            }
-          ]
+          {
+            title: 'My Account',
+            icon: 'person',
+            value: '200',
+            color1: '#5064b5',
+            color2: '#3e51b5'
+          },
+          {
+            title: 'Followers',
+            icon: 'fab fa-twitter',
+            value: '500',
+            color1: '#f37169',
+            color2: '#f34636'
+          },
+          {
+            title: 'Connections',
+            icon: 'fab fa-google',
+            value: '50',
+            color1: '#ea6a7f',
+            color2: '#ea4b64'
+          },
+          {
+            title: 'Website Visits',
+            icon: 'bar_chart',
+            value: '1020',
+            color1: '#a270b1',
+            color2: '#9f52b1'
+          }
+        ]
         : [
-            {
-              title: "Monthly Income",
-              icon: "fas fa-dollar-sign",
-              value: "$ 20k",
-              color1: "#546bfa",
-              color2: "#3e51b5"
-            },
-            {
-              title: "Weekly Sales",
-              icon: "fas fa-chart-bar",
-              value: "20",
-              color1: "#3a9688",
-              color2: "#3e51b5"
-            },
-            {
-              title: "New Customers",
-              icon: "fas fa-chart-line",
-              value: "321",
-              color1: "#7cb342",
-              color2: "#3e51b5"
-            },
-            {
-              title: "Active Users",
-              icon: "person",
-              value: "82",
-              color1: "#f88c2b",
-              color2: "#3e51b5"
-            }
-          ];
+          {
+            title: 'Monthly Income',
+            icon: 'fas fa-dollar-sign',
+            value: '$ 20k',
+            color1: '#546bfa',
+            color2: '#3e51b5'
+          },
+          {
+            title: 'Weekly Sales',
+            icon: 'fas fa-chart-bar',
+            value: '20',
+            color1: '#3a9688',
+            color2: '#3e51b5'
+          },
+          {
+            title: 'New Customers',
+            icon: 'fas fa-chart-line',
+            value: '321',
+            color1: '#7cb342',
+            color2: '#3e51b5'
+          },
+          {
+            title: 'Active Users',
+            icon: 'person',
+            value: '82',
+            color1: '#f88c2b',
+            color2: '#3e51b5'
+          }
+        ]
     }
   }
-};
+}
 </script>
