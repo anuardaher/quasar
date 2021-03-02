@@ -4,8 +4,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Dashboard.vue') },
-      { path: '/orcamento', component: () => import('pages/orcamento/Index.vue') },
-      { path: '/orcamento/novo', component: () => import('pages/orcamento/Salvar.vue') },
+      { path: '/orcamentos', component: () => import('pages/orcamentos/Index.vue') },
+      { path: '/orcamentos/novo', component: () => import('pages/orcamentos/Salvar.vue') },
       { path: '/Dashboard2', component: () => import('pages/Dashboard2.vue') },
       { path: '/Profile', component: () => import('pages/UserProfile.vue') },
       { path: '/Map', component: () => import('pages/Map.vue') },
@@ -38,10 +38,6 @@ const routes = [
   {
     path: '/Login-1',
     component: () => import('pages/Login-1.vue')
-  },
-  {
-    path: '/Mail',
-    component: () => import('layouts/Mail.vue')
   },
   {
     path: '/Lock-2',

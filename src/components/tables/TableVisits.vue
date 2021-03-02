@@ -93,72 +93,51 @@ export default {
           sortable: true
         },
         {
-          name: 'produto',
-          align: 'left',
-          label: 'Produto',
-          field: 'user_name',
-          sortable: true
-        },
-        {
           name: 'desc',
+          align: 'left',
           required: true,
           label: 'Criação',
-          align: 'left',
           field: 'date',
           sortable: true
         },
         {
           name: 'date',
-          align: 'right',
+          align: 'left',
           label: 'Enc.',
           field: 'date',
           sortable: true
         },
         {
-          name: 'date',
-          align: 'right',
+          name: 'quantidade',
+          align: 'left',
           label: 'Quant.',
-          field: '',
+          field: 'quantidade',
           sortable: true
         },
         {
-          name: 'boolean',
-          align: 'right',
+          name: 'status',
+          align: 'left',
           label: 'Status',
-          field: 'boolean',
+          field: row => row.status === true ? 'Ativo' : 'Inativo',
           sortable: true
         }
       ],
       data: [
         {
-          id: 'U0001',
+          id: '0001',
           name: '/login',
-          date: '12-10-2019',
-          user_name: 'Pratik Patel'
+          date: '12/10/2019',
+          produto: 'Amortecedor',
+          quantidade: 3,
+          status: true
         },
         {
-          id: 'U0002',
+          id: '0002',
           name: '/Dashboard',
-          date: '11-02-2019',
-          user_name: 'Razvan Stoenescu'
-        },
-        {
-          id: 'U0003',
-          name: '/Map',
-          date: '03-25-2019',
-          user_name: 'Pratik Patel'
-        },
-        {
-          id: 'U0004',
-          name: '/Mail',
-          date: '03-18-2019',
-          user_name: 'Jeff Galbraith'
-        },
-        {
-          id: 'U0005',
-          name: '/Profile',
-          date: '04-09-2019',
-          user_name: 'Pratik Patel'
+          date: '11/02/2029',
+          produto: 'Válvula',
+          quantidade: 2,
+          status: true
         }
       ],
       pagination: {

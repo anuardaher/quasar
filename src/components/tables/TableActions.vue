@@ -3,7 +3,7 @@
     <q-card-section>
       <div class="text-h6 text-grey-8">
         Inline Actions
-        <q-btn label="Export" class="float-right text-capitalize text-indigo-8 shadow-3" icon="person"/>
+        <q-btn label="Export" class="float-right text-capitalize text-primary shadow-3" icon="person"/>
       </div>
     </q-card-section>
     <q-card-section class="q-pa-none">

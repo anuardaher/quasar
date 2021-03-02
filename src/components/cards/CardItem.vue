@@ -15,7 +15,7 @@
       </q-item-section>
 
       <q-item-section side>
-        <q-btn label="add" size="sm" class="bg-indigo-8 text-capitalize text-white"></q-btn>
+        <q-btn label="add" size="sm" class="bg-primary text-capitalize text-white"></q-btn>
       </q-item-section>
     </q-item>
 

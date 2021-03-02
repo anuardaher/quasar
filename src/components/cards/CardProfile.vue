@@ -18,7 +18,7 @@
     <q-card-actions align="center">
       <q-btn flat round icon="fab fa-facebook" class="bg-indigo-7 text-white"/>
       <q-btn flat round icon="fab fa-twitter" class="bg-info text-white"/>
-      <q-btn flat round icon="fab fa-instagram" class="bg-indigo-8 text-white"/>
+      <q-btn flat round icon="fab fa-instagram" class="bg-primary text-white"/>
     </q-card-actions>
   </q-card>
 </template>

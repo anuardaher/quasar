@@ -22,7 +22,7 @@
       </div>
     </q-card-section>
     <q-card-actions vertical align="center">
-      <q-btn class="text-capitalize bg-indigo-8" color="">Start Free Trail</q-btn>
+      <q-btn class="text-capitalize bg-primary" color="">Start Free Trail</q-btn>
     </q-card-actions>
     <q-separator/>
     <q-card-section class="text-center">

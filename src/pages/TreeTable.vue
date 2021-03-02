@@ -2,7 +2,7 @@
   <q-page class="q-pa-sm">
     <q-card>
       <q-card-section>
-        <div class="text-h6 text-indigo-8">
+        <div class="text-h6 text-primary">
           Tree Table
         </div>
         <div class="text-subtitle2">
@@ -18,7 +18,7 @@
 
     <q-card class="q-mt-sm">
       <q-card-section>
-        <div class="text-h6 text-indigo-8">
+        <div class="text-h6 text-primary">
           Custom Icon with Chip
         </div>
         <div class="text-subtitle2">

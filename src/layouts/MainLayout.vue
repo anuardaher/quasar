@@ -50,15 +50,15 @@
             <q-item-label>Home</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item to="/orcamento" active-class="q-item-no-link-highlighting">
+        <q-item to="/orcamentos" active-class="q-item-no-link-highlighting">
           <q-item-section avatar>
-            <q-icon name="money" />
+            <q-icon name="article" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Orçamento</q-item-label>
+            <q-item-label>Orçamentos</q-item-label>
           </q-item-section>
         </q-item>
-        <q-expansion-item icon="pages" label="Pages">
+        <!-- <q-expansion-item icon="pages" label="Pages">
           <q-list class="q-pl-lg">
             <q-item to="/Login-1" active-class="q-item-no-link-highlighting">
               <q-item-section avatar>
@@ -115,12 +115,14 @@
               </q-item-section>
             </q-item>
           </q-list>
-        </q-expansion-item>
+        </q-expansion-item> -->
       </q-list>
     </q-drawer>
 
     <q-page-container class="bg-page">
-      <router-view />
+      <q-page class="q-pa-sm">
+        <router-view />
+      </q-page>
     </q-page-container>
   </q-layout>
 </template>

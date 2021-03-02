@@ -2,10 +2,10 @@
   <q-card class="q-mb-sm">
     <q-item>
       <q-item-section>
-        <div class="text-h6 text-indigo-8">
+        <div class="text-h6 text-primary">
           {{ title }}
         </div>
-        <div class="text-subtitle2">
+        <div class="text-subtitle">
           {{ subtitle }}
         </div>
       </q-item-section>
