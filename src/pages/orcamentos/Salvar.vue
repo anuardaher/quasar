@@ -15,6 +15,7 @@
             icon="save"
             color="secondary"
             class="text-capitalize text-white"
+            @click="saveOrcamento()"
           ></q-btn>
         </q-item-section>
       </q-item>
@@ -152,7 +153,16 @@
             </div>
           </div>
           <q-separator :vertical="$q.screen.gt.sm" />
-          <div class="col-md-5 col-12 row q-gutter-x-md q-gutter-y-md q-ml-xs">
+          <div
+            :class="
+              `col-md-5 col-12 row ${
+                $q.screen.gt.sm ? 'q-gutter-x-md' : null
+              } q-ml-xs`
+            "
+          >
+            <div class="col-12 text-subtitle1 q-mb-sm">
+              Busque pelo veículo:
+            </div>
             <div class="col-md-3 col-6">
               <q-input
                 type="text"
@@ -245,7 +255,7 @@
               <q-input
                 type="text"
                 label="Entrega"
-                v-model="orcamento.cidade"
+                v-model="orcamento.entrega"
                 dense
               >
                 <template v-slot:prepend>
@@ -271,8 +281,8 @@
     </q-card>
     <q-card style="min-height: 300px; max-height: 500px">
       <q-card-section class="q-my-sm">
-        <div class="row q-gutter-x-md">
-          <div class="col-4 row q-gutter-y-md">
+        <div class="row q-gutter-x-md q-gutter-y-md">
+          <div class="col-md-4 col-12 row">
             <div class="col-12">
               <q-item class="q-pa-none">
                 <q-item-section>
@@ -286,93 +296,103 @@
                     round
                     icon="add"
                     color="secondary"
-                    class="text-capitalize text-white"
+                    class="text-capitalize text-white q-mr-sm"
                     @click="addProduto()"
                   ></q-btn>
                 </q-item-section>
               </q-item>
-              <q-select
-                color="primary"
-                :options="produtos"
-                v-model="produto.descricao"
-                option-label="descricao"
-                option-value="descricao"
-                label="Produto"
-                dense
-                clearable
-                @input="setProduto"
-              >
-                <template v-slot:prepend>
-                  <q-icon name="build" />
-                </template>
-              </q-select>
+              <q-separator />
             </div>
-            <div class="col-xl-3 col-4">
-              <q-input
-                type="number"
-                color="primary"
-                v-model="produto.quantidade"
-                label="Quantidade"
-                stack-label
-                dense
-              >
-                <template v-slot:prepend>
-                  <q-icon name="dialpad" />
-                </template>
-              </q-input>
-            </div>
-            <div class="col-xl-4 col-5 offset-3">
-              <q-input
-                type="text"
-                color="primary"
-                v-model="produto.valor"
-                label="Valor Unitário"
-                readonly
-                stack-label
-                dense
-              >
-                <template v-slot:prepend>
-                  <span class="text-subtitle1 q-mt-sm">R$</span>
-                </template>
-              </q-input>
-            </div>
-            <div class="col-xl-5 col-6 self-center">
-              <q-checkbox
-                v-model="produto.podeOutraMarca"
-                label="Pode outra marca?"
-                dense
-              />
-            </div>
-            <div class="col-xl-4 offset-xl-1 col-5 ">
-              <q-input
-                type="text"
-                color="primary"
-                v-model="produto.dataFinal"
-                label="Data Final"
-                mask="##/##/####"
-                dense
-                stack-label
-              >
-                <template v-slot:prepend>
-                  <q-icon name="event" class="cursor-pointer"> </q-icon>
-                  <q-popup-proxy
-                    ref="qDateProxy"
-                    transition-show="scale"
-                    transition-hide="scale"
-                  >
-                    <q-date
-                      v-model="produto.dataFinal"
-                      color="primary"
-                      mask="DD/MM/YYYY"
-                      dense
+            <div class="row q-gutter-y-md q-mt-sm">
+              <div class="col-12">
+                <q-select
+                  color="primary"
+                  :options="produtos"
+                  v-model="produto.descricao"
+                  option-label="descricao"
+                  option-value="descricao"
+                  label="Produto"
+                  dense
+                  clearable
+                  @input="setProduto"
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="build" />
+                  </template>
+                </q-select>
+              </div>
+              <div class="col-xl-3 col-4">
+                <q-input
+                  type="number"
+                  color="primary"
+                  v-model="produto.quantidade"
+                  label="Quantidade"
+                  stack-label
+                  dense
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="dialpad" />
+                  </template>
+                </q-input>
+              </div>
+              <div class="col-xl-4 col-5 offset-3">
+                <q-input
+                  type="text"
+                  color="primary"
+                  v-model="produto.valor"
+                  label="Valor Unitário"
+                  readonly
+                  stack-label
+                  dense
+                >
+                  <template v-slot:prepend>
+                    <span class="text-body1 q-mt-sm">R$</span>
+                  </template>
+                </q-input>
+              </div>
+              <div class="col-xl-5 col-6 self-center">
+                <q-checkbox
+                  v-model="produto.podeOutraMarca"
+                  label="Pode outra marca?"
+                  dense
+                />
+              </div>
+              <div class="col-xl-4 offset-xl-1 col-5 ">
+                <q-input
+                  type="text"
+                  color="primary"
+                  v-model="produto.dataFinal"
+                  label="Data Final"
+                  mask="##/##/####"
+                  dense
+                  stack-label
+                >
+                  <template v-slot:prepend>
+                    <q-icon name="event" class="cursor-pointer"> </q-icon>
+                    <q-popup-proxy
+                      ref="qDateProxy"
+                      transition-show="scale"
+                      transition-hide="scale"
                     >
-                      <div class="row items-center justify-end">
-                        <q-btn v-close-popup label="Ok" color="primary" flat />
-                      </div>
-                    </q-date>
-                  </q-popup-proxy>
-                </template>
-              </q-input>
+                      <q-date
+                        v-model="produto.dataFinal"
+                        color="primary"
+                        mask="DD/MM/YYYY"
+                        dense
+                      >
+                        <div class="row items-center justify-end">
+                          <q-btn
+                            v-close-popup
+                            label="Ok"
+                            color="primary"
+                            flat
+                          />
+                        </div>
+                      </q-date>
+                    </q-popup-proxy>
+                  </template>
+                </q-input>
+              </div>
             </div>
           </div>
           <q-separator :vertical="$q.screen.gt.sm" />
@@ -397,6 +417,7 @@ export default {
     return {
       tipoOrcamento: 'veiculo',
       orcamento: {
+        numero: 123,
         abertura: new Date().toLocaleDateString(),
         status: true,
         produtos: []
@@ -442,8 +463,18 @@ export default {
           sortable: true,
           align: 'left'
         },
-        { name: 'outraMarca', label: 'Pode outra marca?', align: 'left', field: row => row.podeOutraMarca ? 'Sim' : 'Não' },
-        { name: 'dataFinal', label: 'Data Final', field: 'dataFinal', align: 'left' }
+        {
+          name: 'outraMarca',
+          label: 'Pode outra marca?',
+          align: 'left',
+          field: row => (row.podeOutraMarca ? 'Sim' : 'Não')
+        },
+        {
+          name: 'dataFinal',
+          label: 'Data Final',
+          field: 'dataFinal',
+          align: 'left'
+        }
       ],
       produtos: [
         {
@@ -459,13 +490,30 @@ export default {
   },
   methods: {
     setProduto ({ numero, valor, descricao }) {
-      this.produto.numero = numero
-      this.produto.valor = valor
-      this.produto.descricao = descricao
+      if (numero) {
+        this.produto.numero = numero
+        this.produto.valor = valor
+        this.produto.descricao = descricao
+      }
     },
     addProduto () {
       this.orcamento.produtos.push(this.produto)
       this.produto = { podeOutraMarca: false }
+    },
+    saveOrcamento () {
+      window.localStorage.setItem('orcamento', JSON.stringify(this.orcamento))
+      this.orcamento = {
+        abertura: new Date().toLocaleDateString(),
+        status: true,
+        produtos: []
+      }
+      this.$q.notify({
+        spinner: true,
+        message: 'Salvo com sucesso.',
+        color: 'positive',
+        timeout: 3000
+      })
+      setTimeout(() => this.$router.push('/orcamentos'), 3000)
     }
   }
 }

@@ -38,7 +38,7 @@
       </q-item>
       <q-separator />
       <q-card-section>
-        <div class="q-gutter-y-md q-gutter-x-xl row">
+        <div :class="`q-gutter-y-md ${$q.screen.gt.sm ? 'q-gutter-x-xl' : 'q-gutter-x-md'} row`">
           <q-select
             class="col-md-5 col-sm-6 col-xs-12"
             color="primary"
@@ -124,7 +124,7 @@
           </q-select>
           <q-input
             type="number"
-            class="col-lg-1 col-md-2 col-sm-2 col-xs-5"
+            class="col-lg-1 col-md-1 col-sm-2 col-xs-5"
             color="primary"
             v-model="orcamento.quantidade"
             label="Quantidade"

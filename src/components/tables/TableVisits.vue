@@ -4,13 +4,14 @@
       <q-card class="text-grey-8">
         <q-card-section class="q-pa-none">
           <q-table
-            class="no-shadow"
             :data="data"
             :hide-header="mode === 'grid'"
             :columns="columns"
-            row-key="name"
+            row-key="numero"
             :filter="filter"
             :pagination.sync="pagination"
+            @row-click="(event, row) => $router.push(`/orcamentos/detalhes/${row.numero}`)"
+            class="table-orcamento"
           >
             <template v-slot:top-right="props">
               <q-btn
@@ -53,6 +54,12 @@
                 </template>
               </q-input>
             </template>
+            <template v-slot:body-cell-Action="props">
+              <q-td :props="props">
+                <q-btn icon="edit" size="sm" flat dense />
+                <q-btn icon="delete" size="sm" class="q-ml-sm" flat dense />
+              </q-td>
+            </template>
           </q-table>
         </q-card-section>
       </q-card>
@@ -89,57 +96,47 @@ export default {
           name: 'id',
           align: 'left',
           label: 'Número',
-          field: 'id',
+          field: 'numero',
           sortable: true
         },
         {
-          name: 'desc',
+          name: 'abertura',
           align: 'left',
           required: true,
-          label: 'Criação',
-          field: 'date',
+          label: 'Abertura',
+          field: 'abertura',
           sortable: true
         },
         {
-          name: 'date',
+          name: 'vencimento',
           align: 'left',
-          label: 'Enc.',
-          field: 'date',
+          label: 'Vencimento.',
+          field: 'vencimento',
           sortable: true
         },
         {
-          name: 'quantidade',
+          name: 'cidade',
           align: 'left',
-          label: 'Quant.',
-          field: 'quantidade',
+          label: 'Cidade',
+          field: 'cidade',
           sortable: true
         },
         {
           name: 'status',
           align: 'left',
           label: 'Status',
-          field: row => row.status === true ? 'Ativo' : 'Inativo',
+          field: row => (row.status === true ? 'Ativo' : 'Inativo'),
           sortable: true
-        }
-      ],
-      data: [
-        {
-          id: '0001',
-          name: '/login',
-          date: '12/10/2019',
-          produto: 'Amortecedor',
-          quantidade: 3,
-          status: true
         },
         {
-          id: '0002',
-          name: '/Dashboard',
-          date: '11/02/2029',
-          produto: 'Válvula',
-          quantidade: 2,
-          status: true
+          name: 'Action',
+          label: 'Ações',
+          field: 'Action',
+          sortable: false,
+          align: 'center'
         }
       ],
+      data: [],
       pagination: {
         rowsPerPage: 10
       }
@@ -174,7 +171,22 @@ export default {
           icon: 'warning'
         })
       }
+    },
+    getOrcamentos () {
+      const parsedOrcamentos = JSON.parse(
+        window.localStorage.getItem('orcamento')
+      )
+      this.data = [parsedOrcamentos] ?? []
     }
+  },
+  created () {
+    this.getOrcamentos()
   }
 }
 </script>
+
+<style scoped>
+table tbody tr:hover {
+    background-color: primary;
+}
+</style>
