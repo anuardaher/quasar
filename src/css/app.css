@@ -1,1 +1,13 @@
-/* app global css */
+.sticky-header {
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  background-color: inherit;
+}
+
+.sticky-footer {
+  bottom: 0;
+  position: sticky;
+  z-index: 1;
+  background-color: inherit;
+}

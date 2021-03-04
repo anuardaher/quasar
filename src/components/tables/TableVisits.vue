@@ -10,7 +10,7 @@
             row-key="numero"
             :filter="filter"
             :pagination.sync="pagination"
-            @row-click="(event, row) => $router.push(`/orcamentos/detalhes/${row.numero}`)"
+            @row-click="(event, row) => $emit('row-click', row)"
             class="table-orcamento"
           >
             <template v-slot:top-right="props">
@@ -56,8 +56,21 @@
             </template>
             <template v-slot:body-cell-Action="props">
               <q-td :props="props">
-                <q-btn icon="edit" size="sm" flat dense />
-                <q-btn icon="delete" size="sm" class="q-ml-sm" flat dense />
+                <q-btn
+                  icon="edit"
+                  size="sm"
+                  flat
+                  dense
+                  @click.stop="edit(props.row)"
+                />
+                <q-btn
+                  icon="delete"
+                  size="sm"
+                  class="q-ml-sm"
+                  flat
+                  dense
+                  @click.stop="remove()"
+                />
               </q-td>
             </template>
           </q-table>
@@ -176,7 +189,23 @@ export default {
       const parsedOrcamentos = JSON.parse(
         window.localStorage.getItem('orcamento')
       )
-      this.data = [parsedOrcamentos] ?? []
+      this.data = parsedOrcamentos ? [parsedOrcamentos] : []
+    },
+    remove () {
+      this.$q.dialog({
+        title: 'Alerta',
+        icon: 'warning',
+        cancel: true,
+        color: 'negative',
+        message: 'Tem certeza que deseja excluir?'
+      })
+        .onOk(() => {
+          window.localStorage.removeItem('orcamento')
+          this.getOrcamentos()
+        })
+    },
+    edit (orcamento) {
+      this.$router.push(`/orcamentos/editar/${orcamento.numero}`)
     }
   },
   created () {
@@ -187,6 +216,6 @@ export default {
 
 <style scoped>
 table tbody tr:hover {
-    background-color: primary;
+  background-color: primary;
 }
 </style>

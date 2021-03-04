@@ -397,11 +397,8 @@
           </div>
           <q-separator :vertical="$q.screen.gt.sm" />
           <div class="col-grow">
-            <q-table
-              dense
+            <produtos-table
               :data="orcamento.produtos"
-              :columns="columns"
-              row-key="name"
             />
           </div>
         </div>
@@ -411,8 +408,11 @@
 </template>
 
 <script>
+import ProdutosTable from 'src/components/pages/orcamentos/ProdutosTable'
 export default {
-  components: {},
+  components: {
+    ProdutosTable
+  },
   data () {
     return {
       tipoOrcamento: 'veiculo',
@@ -438,42 +438,6 @@ export default {
           placa: 'MBS-8951',
           chassi: '9382901001',
           kilometragem: 91
-        }
-      ],
-      columns: [
-        {
-          name: 'produto',
-          required: true,
-          label: 'Produto',
-          field: 'descricao',
-          sortable: true,
-          align: 'left'
-        },
-        {
-          name: 'quantidade',
-          label: 'Quantidade',
-          field: 'quantidade',
-          sortable: true,
-          align: 'left'
-        },
-        {
-          name: 'valor',
-          label: 'Valor Unitáiro',
-          field: 'valor',
-          sortable: true,
-          align: 'left'
-        },
-        {
-          name: 'outraMarca',
-          label: 'Pode outra marca?',
-          align: 'left',
-          field: row => (row.podeOutraMarca ? 'Sim' : 'Não')
-        },
-        {
-          name: 'dataFinal',
-          label: 'Data Final',
-          field: 'dataFinal',
-          align: 'left'
         }
       ],
       produtos: [
@@ -514,6 +478,13 @@ export default {
         timeout: 3000
       })
       setTimeout(() => this.$router.push('/orcamentos'), 3000)
+    }
+  },
+  mounted () {
+    if (this.$route.params.id) {
+      this.orcamento = JSON.parse(
+        window.localStorage.getItem('orcamento')
+      )
     }
   }
 }

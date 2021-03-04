@@ -4,8 +4,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Dashboard.vue') },
-      { path: '/orcamentos', component: () => import('pages/orcamentos/Index.vue') },
-      { path: '/orcamentos/novo', component: () => import('pages/orcamentos/Salvar.vue') },
+      { path: '/orcamentos', component: () => import('src/pages/orcamentos/IndexOrcamento.vue') },
+      { path: '/orcamentos/novo', component: () => import('src/pages/orcamentos/NovoOrcamento.vue') },
+      { path: '/orcamentos/editar/:id', component: () => import('src/pages/orcamentos/NovoOrcamento.vue') },
       { path: '/Dashboard2', component: () => import('pages/Dashboard2.vue') },
       { path: '/Profile', component: () => import('pages/UserProfile.vue') },
       { path: '/Map', component: () => import('pages/Map.vue') },
