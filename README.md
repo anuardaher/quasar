@@ -1,4 +1,4 @@
-# Budget
+# Quasar Framework
 
 ## Install the dependencies
 ```bash
